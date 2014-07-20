@@ -9,7 +9,7 @@ var DeviceEmails = {
             onFail(e);
         }
 
-        exec(success, fail, "DeviceEmails", "getDeviceEmails", []);
+        cordova.exec(success, fail, "DeviceEmails", "getDeviceEmails", []);
     }
 }
 
