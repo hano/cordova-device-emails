@@ -21,14 +21,14 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:rim="http://www.blackberry.com/ns/widgets"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="org.apache.cordova.device"
+    id="net.works_for_me.it.deviceemail"
     version="0.2.11-dev">
     <name>Device</name>
     <description>Cordova Device Email Plugin</description>
     <license>Apache 2.0</license>
     <keywords>cordova,device,email</keywords>
-    <repo>https://github.com/sebastien-roch/cordova-device-email.git</repo>
-    <issue>https://issues.apache.org/jira/browse/CB/component/12320648</issue>
+    <repo>https://github.com/sebastien-roch/cordova-device-emails.git</repo>
+    <issue>https://github.com/sebastien-roch/cordova-device-emails/issues</issue>
 
     <js-module src="www/deviceemail.js" name="deviceemail">
         <clobbers target="DeviceEmail" />
