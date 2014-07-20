@@ -21,28 +21,28 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:rim="http://www.blackberry.com/ns/widgets"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="net.works_for_me.it.deviceemail"
+    id="net.works_for_me.it.deviceemails"
     version="0.2.11-dev">
-    <name>Device</name>
-    <description>Cordova Device Email Plugin</description>
+    <name>Device Emails</name>
+    <description>Cordova Device Emails Plugin</description>
     <license>Apache 2.0</license>
     <keywords>cordova,device,email</keywords>
     <repo>https://github.com/sebastien-roch/cordova-device-emails.git</repo>
     <issue>https://github.com/sebastien-roch/cordova-device-emails/issues</issue>
 
-    <js-module src="www/deviceemail.js" name="deviceemail">
-        <clobbers target="DeviceEmail" />
+    <js-module src="www/deviceemails.js" name="deviceemails">
+        <clobbers target="DeviceEmails" />
     </js-module>
 
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="DeviceEmail" >
-                <param name="android-package" value="net.works_for_me.it.deviceemail"/>
+            <feature name="DeviceEmails" >
+                <param name="android-package" value="net.works_for_me.it.deviceemails"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/DeviceEmail.java" target-dir="src/net/works_for_me/it/deviceemail" />
+        <source-file src="src/android/DeviceEmails.java" target-dir="src/net/works_for_me/it/deviceemails" />
     </platform>
 
 </plugin>

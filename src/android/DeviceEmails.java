@@ -1,5 +1,5 @@
 
-package net.works_for_me.it.deviceemail;
+package net.works_for_me.it.deviceemails;
 
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.CallbackContext;
@@ -10,7 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class DeviceEmails extends CordovaPlugin {
-    public static final String TAG = "DeviceEmail";
+    public static final String TAG = "DeviceEmails";
 
     /**
      * Constructor.

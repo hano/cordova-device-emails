@@ -1,4 +1,4 @@
-var DeviceEmail = {
+var DeviceEmails = {
     get: function(onSuccess, onFail) {
 
         function success(emails) {
@@ -13,4 +13,4 @@ var DeviceEmail = {
     }
 }
 
-module.exports = DeviceEmail;
+module.exports = DeviceEmails;
