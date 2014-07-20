@@ -9,13 +9,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class DeviceEmail extends CordovaPlugin {
+public class DeviceEmails extends CordovaPlugin {
     public static final String TAG = "DeviceEmail";
 
     /**
      * Constructor.
      */
-    public DeviceEmail() {
+    public DeviceEmails() {
     }
 
     /**
