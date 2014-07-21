@@ -11,6 +11,8 @@ import org.json.JSONObject;
 
 import android.accounts.AccountManager;
 import android.accounts.Account;
+import java.util.List;
+import java.util.ArrayList;
 
 public class DeviceEmails extends CordovaPlugin {
     public static final String TAG = "DeviceEmails";
@@ -57,7 +59,8 @@ public class DeviceEmails extends CordovaPlugin {
     //--------------------------------------------------------------------------
 
     public List<String> getEmails() {
-        Account[] accounts = AccountManager.get(cordova.getActivity().getApplicationContext()).getAccountsByType('com.google');
+        AccountManager manager = AccountManager.get(cordova.getActivity().getApplicationContext());
+        Account[] accounts = manager.getAccountsByType('com.google');
         List<String> emails = new ArrayList<String>();
         for (Account account : accounts) {
             emails.add(account.name);
