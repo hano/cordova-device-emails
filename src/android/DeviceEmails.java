@@ -9,14 +9,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.accounts.AccountManager;
+import android.accounts.Account;
+
 public class DeviceEmails extends CordovaPlugin {
     public static final String TAG = "DeviceEmails";
-
-    /**
-     * Constructor.
-     */
-    public DeviceEmails() {
-    }
 
     /**
      * Sets the context of the Command. This can then be used to do things like
@@ -39,9 +36,15 @@ public class DeviceEmails extends CordovaPlugin {
      */
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("getDeviceEmails")) {
-            JSONObject r = new JSONObject();
-            r.put("email", "someone@example.com");
-            callbackContext.success(r);
+            List<String> emails = this.getEmails();
+
+            JSONObject obj = new JSONObject();
+            JSONArray jsonEmails = new JSONArray();
+            for (String e : emails) {
+                jsonEmails.put(e);
+            }
+            obj.put("emails", jsonEmails);
+            callbackContext.success(obj);
         }
         else {
             return false;
@@ -53,4 +56,13 @@ public class DeviceEmails extends CordovaPlugin {
     // LOCAL METHODS
     //--------------------------------------------------------------------------
 
+    public List<String> getEmails() {
+        Account[] accounts = AccountManager.get(cordova.getActivity().getApplicationContext()).getAccountsByType('com.google');
+        List<String> emails = new ArrayList<String>()
+        for (Account account : accounts) {
+            emails.add(account.name);
+        }
+
+        return emails;
+    }
 }
