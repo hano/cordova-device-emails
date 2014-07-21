@@ -58,7 +58,7 @@ public class DeviceEmails extends CordovaPlugin {
 
     public List<String> getEmails() {
         Account[] accounts = AccountManager.get(cordova.getActivity().getApplicationContext()).getAccountsByType('com.google');
-        List<String> emails = new ArrayList<String>()
+        List<String> emails = new ArrayList<String>();
         for (Account account : accounts) {
             emails.add(account.name);
         }
