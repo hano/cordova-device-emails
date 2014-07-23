@@ -14,7 +14,7 @@ cordova plugin add https://github.com/sebastien-roch/cordova-device-emails.git
 ```
 DeviceEmails.get(onSuccess, onFail);
 ```
-`onSuccess` receives an array of e-mails as first and only argument
+`onSuccess` receives an object as first and only argument containing one key, `emails`, having for value an array of e-mails.
 
 `onFail` receives the reason of the failure as a string
 
