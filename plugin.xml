@@ -38,7 +38,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="DeviceEmails" >
-                <param name="android-package" value="net.works_for_me.it.deviceemails"/>
+                <param name="android-package" value="net.works_for_me.it.deviceemails.DeviceEmails"/>
             </feature>
         </config-file>
 
