@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Licensed to the Apache Software Foundation (ASF) under one
@@ -43,6 +44,10 @@
         </config-file>
 
         <source-file src="src/android/DeviceEmails.java" target-dir="src/net/works_for_me/it/deviceemails" />
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+        </config-file>
     </platform>
 
 </plugin>
