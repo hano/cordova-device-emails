@@ -9,6 +9,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.regex.Pattern;
+import android.util.Patterns;
+
 import android.accounts.AccountManager;
 import android.accounts.Account;
 import java.util.List;
@@ -59,11 +62,14 @@ public class DeviceEmails extends CordovaPlugin {
     //--------------------------------------------------------------------------
 
     public List<String> getEmails() {
+        Pattern emailPattern = Patterns.EMAIL_ADDRESS;
         AccountManager manager = AccountManager.get(cordova.getActivity().getApplicationContext());
-        Account[] accounts = manager.getAccountsByType("com.google");
+        Account[] accounts = manager.getAccounts();
         List<String> emails = new ArrayList<String>();
         for (Account account : accounts) {
-            emails.add(account.name);
+            if (emailPattern.matcher(account.name).matches()) {
+                emails.add(account.name);
+            }
         }
 
         return emails;
